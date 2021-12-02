@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mangarci <mangarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 21:26:45 by mangarci          #+#    #+#             */
-/*   Updated: 2021/11/08 21:34:56 by mangarci         ###   ########.fr       */
+/*   Updated: 2021/12/02 14:36:15 by manugarcias      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int rra(s_stack *a)
+int rra(t_stack *a)
 {
     int i;
     int aux;
 
-    if (!a->stack[0])
+    if (!a->len)
         return (0);
     i = a->len - 1;
     aux = a->stack[a->len - 1];
@@ -27,16 +27,16 @@ int rra(s_stack *a)
         i--;
     }
     a->stack[0] = aux;
-    print("rra\n");
+    printf("rra\n");
     return (1);
 }
 
-int rrb(s_stack *b)
+int rrb(t_stack *b)
 {
     int i;
     int aux;
 
-    if (!b->stack[0])
+    if (!b->len)
         return (0);
     i = b->len - 1;
     aux = b->stack[b->len - 1];
@@ -46,11 +46,11 @@ int rrb(s_stack *b)
         i--;
     }
     b->stack[0] = aux;
-    print("rrb\n");
+    printf("rrb\n");
     return (1);
 }
 
-int rrr(s_stack *a, s_stack *b)
+int rrr(t_stack *a, t_stack *b)
 {
     if (!rra(a) && !rrb(b))
         return (0);

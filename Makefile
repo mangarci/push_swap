@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mangarci <mangarci@student.42.fr>          +#+  +:+       +#+         #
+#    By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 18:23:15 by mangarci          #+#    #+#              #
-#    Updated: 2021/11/08 18:30:45 by mangarci         ###   ########.fr        #
+#    Updated: 2021/12/02 19:51:49 by manugarcias      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
-#CFLAGS = -Wall -Werror - Wextra
+CFLAGS = -Wall -Werror -Wextra
 SRCS_DIR = srcs/
 SRCS = $(wildcard $(SRCS_DIR)*.c)
 OBJS = $(SRCS:%.c=%.o)

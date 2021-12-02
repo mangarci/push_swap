@@ -12,7 +12,7 @@
 
 #include "../include/push_swap.h"
 
-int sa(s_stack *a)
+int sa(t_stack *a)
 {
     int aux;
     if (a->len <= 1 || !*a->stack)
@@ -20,11 +20,11 @@ int sa(s_stack *a)
     aux = a->stack[0];
     a->stack[0] = a->stack[1];
     a->stack[1] = aux;
-    print("sa\n");
+    printf("sa\n");
     return (1);
 }
 
-int sb(s_stack *b)
+int sb(t_stack *b)
 {
     int aux;
     if (b->len <= 1 || !*b->stack)
@@ -32,13 +32,13 @@ int sb(s_stack *b)
     aux = b->stack[0];
     b->stack[0] = b->stack[1];
     b->stack[1] = aux;
-    print("sb\n");
+    printf("sb\n");
     return (1);
 }
 
-int ss(s_stack *a, s_stack *b)
+int ss(t_stack *a, t_stack *b)
 {
     if (sa(a) || sb(b))
-        print("ss\n");
+        printf("ss\n");
     return (1);
 }

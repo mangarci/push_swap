@@ -3,34 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mangarci <mangarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 16:28:58 by mangarci          #+#    #+#             */
-/*   Updated: 2021/11/08 16:26:21 by mangarci         ###   ########.fr       */
+/*   Updated: 2021/12/02 14:53:31 by manugarcias      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	is_negative(int negative)
+{
+	if (negative != 0)
+	{
+		return (-1);
+	}
+	else
+	{
+		return (1);
+	}
+}
+
 int	ft_atoi(const char *str)
 {
-	int					i;
-	long int			neg;
-	long int			res;
+	long int	num;
+	int			negative;
 
-	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
-		neg = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	num = 0;
+	negative = 0;
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t'
+			|| *str == '\v' || *str == '\f' || *str == '\r'))
+		++str;
+	if (*str == '-' || *str == '+')
 	{
-		res = res * 10 + (str[i] - '0');
-		i++;
+		if (*str == '-')
+			negative = -1;
+		str++;
 	}
-	return (res * neg);
+	while (*str && ft_isdigit(*str))
+	{
+		num = num * 10 + *str - 48;
+		if (num * is_negative(negative) > 2147483647)
+			return (-1);
+		if (num * is_negative(negative) < -2147483648)
+			return (0);
+		str++;
+	}
+	return ((int)(num * is_negative(negative)));
 }

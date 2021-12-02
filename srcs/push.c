@@ -3,40 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mangarci <mangarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 20:51:49 by mangarci          #+#    #+#             */
-/*   Updated: 2021/11/08 21:17:01 by mangarci         ###   ########.fr       */
+/*   Updated: 2021/12/02 14:35:58 by manugarcias      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int push(s_stack *a, s_stack *b)
+void	new_stack(t_stack *new_a, t_stack *new_b, t_stack *a, t_stack *b)
 {
-    s_stack new_a;
-    s_stack new_b;
-    int i;
+	int	i;
 
-    if (!a->stack)
+	i = 0;
+	while (i < new_a->len)
+	{
+		new_a->stack[i] = a->stack[i + 1];
+		i++;
+	}
+	i = 1;
+	while (i < new_b->len)
+	{
+		new_b->stack[i] = b->stack[i - 1];
+		i++;
+	}
+}
+
+int push(t_stack *a, t_stack *b)
+{
+    t_stack new_a;
+    t_stack new_b;
+
+    if (!a->len)
         return (0);
     new_b.stack = (int *)malloc(sizeof(int) * (b->len + 1));
     new_b.stack[0] = a->stack[0];
     new_b.len = b->len + 1;
     new_a.len = a->len - 1;
-    new_a.stack = (int *)malloc(sizeof(int) * (a->len));
-    i = 0;
-    while (i < new_a.len)
-    {
-        new_a.stack[i] = a->stack[i + 1];
-        i++;
-    }
-    i = 1;
-    while (i < new_b.len)
-    {
-        new_b.stack[i] = b ->stack[i - 1];
-        i++;
-    }
+    new_a.stack = (int *)malloc(sizeof(int) * (new_a.len));
+	new_stack(&new_a, &new_b, a, b);
     free(a->stack);
     free(b->stack);
     *a = new_a;
@@ -44,20 +50,22 @@ int push(s_stack *a, s_stack *b)
     return (1);
 }
 
-int pa(s_stack *a, s_stack *b)
+int pa(t_stack *a, t_stack *b)
 {
     int aux;
-
-    if (aux = push(b, a))
-        print("pa\n");
+    
+    aux = push(b, a);
+    if (aux)
+        printf("pa\n");
     return (aux);
 }
 
-int pb(s_stack *a, s_stack *b)
+int pb(t_stack *a, t_stack *b)
 {
     int aux;
 
-    if (aux = push(a,b))
-        print("pb\n");
+    aux = push(a, b);
+    if (aux)
+        printf("pb\n");
     return (aux);
 }

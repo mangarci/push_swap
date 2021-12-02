@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mangarci <mangarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:40:37 by mangarci          #+#    #+#             */
-/*   Updated: 2021/11/15 14:20:52 by mangarci         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:32:22 by manugarcias      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 
-int print_error(char *str)
+int print_error(void)
 {
-    write(2, "Error\n", ft_strlen("Error\n"));
+    write(2, "Error", ft_strlen("Error"));
     exit(EXIT_FAILURE);
 }
 
@@ -44,7 +44,7 @@ int	is_repeated(char **num, int i, int aux)
 	while (j >= aux)
 	{
 		len2 = ft_strlen(num[j]);
-		if (!ft_strncmp(num[i], num[j], len1) && len == len2)
+		if (!ft_strncmp(num[i], num[j], len) && len == len2)
 			return (1);
 		j--;
 	}

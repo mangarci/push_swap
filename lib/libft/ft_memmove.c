@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 
 	str1 = (unsigned char *)src;
 	str2 = (unsigned char *)dst;
-	if ((dst == '\0' && src == '\0') || len <= 0)
+	if ((dst == NULL && src == NULL) || len <= 0)
 		return (dst);
 	if (str1 < str2)
 	{
