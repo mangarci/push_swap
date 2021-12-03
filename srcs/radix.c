@@ -6,7 +6,7 @@
 /*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 19:03:41 by manugarcias       #+#    #+#             */
-/*   Updated: 2021/12/03 14:22:14 by manugarcias      ###   ########.fr       */
+/*   Updated: 2021/12/03 17:46:41 by mangarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	vary_position(t_stack *a, t_stack *new)
 				prev = a->stack[j];
 				index = j;
 			}
-		j++;
+			j++;
 		}
 		new->stack[index] = i + 1;
 		num = prev;

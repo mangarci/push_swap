@@ -6,12 +6,12 @@
 /*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:31:17 by mangarci          #+#    #+#             */
-/*   Updated: 2021/12/02 15:24:42 by manugarcias      ###   ########.fr       */
+/*   Updated: 2021/12/03 17:38:07 by mangarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -20,8 +20,8 @@
 
 typedef struct t_stack
 {
-    int *stack;
-    int len;
+	int	*stack;
+	int	len;
 }	t_stack;
 
 int		print_error(void);
@@ -56,5 +56,5 @@ void	selection_sort(t_stack *a, t_stack *b);
 int		in_order(t_stack *a);
 void	three_sort(t_stack *a);
 void	five_sort(t_stack *a, t_stack *b);
-void 	do_algorithm(t_stack *a, t_stack *b);
+void	do_algorithm(t_stack *a, t_stack *b);
 #endif

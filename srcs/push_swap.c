@@ -6,7 +6,7 @@
 /*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:30:57 by manugarcias       #+#    #+#             */
-/*   Updated: 2021/12/03 14:22:46 by manugarcias      ###   ########.fr       */
+/*   Updated: 2021/12/03 17:40:16 by mangarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	init_b(t_stack *b)
 
 int	main(int argc, char **argv)
 {
-	t_stack a;
-	t_stack b;
+	t_stack	a;
+	t_stack	b;
 	char	**num;
 
 	num = check_error(argc, argv);

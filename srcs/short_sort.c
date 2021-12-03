@@ -6,7 +6,7 @@
 /*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:45:41 by manugarcias       #+#    #+#             */
-/*   Updated: 2021/12/03 13:55:39 by manugarcias      ###   ########.fr       */
+/*   Updated: 2021/12/03 17:51:25 by mangarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ void	three_sort(t_stack *a)
 	while (!in_order(a))
 	{
 		if (a->stack[0] > a->stack[1] && a->stack[0] < a->stack[2]
-				&& a->stack[1] < a->stack[2])
+			&& a->stack[1] < a->stack[2])
 			sa(a);
 		else if (a->stack[0] < a->stack[1] && a->stack[0] > a->stack[2]
-				&& a->stack[1] > a->stack[2])
+			&& a->stack[1] > a->stack[2])
 			rra(a);
 		else if (a->stack[0] < a->stack[1] && a->stack[0] < a->stack[2]
-				&& a->stack[1] > a->stack[2])
+			&& a->stack[1] > a->stack[2])
 			rra(a);
 		else if (a->stack[0] > a->stack[1] && a->stack[0] > a->stack[2]
-				&& a->stack[1] < a->stack[2])
+			&& a->stack[1] < a->stack[2])
 			ra(a);
 		else if (a->stack[0] > a->stack[1] && a->stack[0] > a->stack[2]
-				&& a->stack[1] > a->stack[2])
+			&& a->stack[1] > a->stack[2])
 			sa(a);
 	}
 }

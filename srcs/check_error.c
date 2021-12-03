@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
+/*   By: mangarci <mangarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:40:37 by mangarci          #+#    #+#             */
-/*   Updated: 2021/12/02 15:32:22 by manugarcias      ###   ########.fr       */
+/*   Updated: 2021/12/03 17:55:29 by mangarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-int print_error(void)
+int	print_error(void)
 {
-    write(2, "Error", ft_strlen("Error"));
-    exit(EXIT_FAILURE);
+	write(2, "Error", ft_strlen("Error"));
+	exit(EXIT_FAILURE);
 }
 
- void	check_digit(char *num)
+void	check_digit(char *num)
 {
 	int	j;
 
