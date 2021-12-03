@@ -6,7 +6,7 @@
 /*   By: manugarciasanchez <manugarciasanchez@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 19:03:41 by manugarcias       #+#    #+#             */
-/*   Updated: 2021/12/02 14:39:16 by manugarcias      ###   ########.fr       */
+/*   Updated: 2021/12/03 14:22:14 by manugarcias      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ void	radix_sort(t_stack *a, t_stack *b)
 	while (((new.len - 1) >> max_bits) != 0)
 		max_bits++;
 	calculate(a, b, &new);
+	free(new.stack);
 }
